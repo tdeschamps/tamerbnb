@@ -3,6 +3,9 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :destroy]
   before_action :listing_params, only: [:create, :update]
 
+  def welcome
+  end
+
   def new
     @listing = Listing.new
   end

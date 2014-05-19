@@ -18,3 +18,15 @@
 .red {
   background-color: #FF6140;
 }
+
+.splash {
+  position: absolute;
+  background-image: url("http://wallemon.com/wp-content/uploads/2014/05/rick-ross-house-wallpaper.jpg");
+  width:100%;
+  height: auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:-2;
+}
