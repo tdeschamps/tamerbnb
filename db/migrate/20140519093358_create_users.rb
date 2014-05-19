@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_name
       t.date :birth_date
       t.text :bio
-      t.tring :password
+      t.string :password
       t.string :profile_picture
 
       t.timestamps
