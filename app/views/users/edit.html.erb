@@ -1,2 +1,50 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit your profile</h1>
+ <div class="form-container">
+  <%= form_for @user do |form|%>
+
+    <div class="form-group col-sm-10">
+        <%= form.label :profile_picture %>
+        <%= form.text_field :profile_picture, class: "form-control"%>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <%= form.label :user_name %>
+        <%= form.text_field :user_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <%= form.label :password %>
+        <%= form.text_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, class: "form-control" %>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <%= form.label :email_address %>
+        <%= form.email_field :email_address, class: "form-control"%>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <%= form.label :bio %>
+        <%= form.text_field :bio, class: "form-control"%>
+    </div>
+
+    <div class="form-group col-sm-10">
+       <%= form.label :birth_date %>
+       <%= form.datetime_field :birth_date, class: "form-control"%>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <%= form.submit class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+</div>
