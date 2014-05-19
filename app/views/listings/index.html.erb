@@ -1,0 +1,19 @@
+<h1> Hello World </h1>
+
+ <tbody>
+
+<% @listings.each do |listing| %>
+
+<h2><%= listing.name %></h2>
+
+<tr>
+<td><%= listing.country %></td>
+<td><%= listing.city %></td>
+<td><%= listing.nb_beds %></td>
+<td><%= listing.nb_bath %></td>
+<td><%= listing.price %></td>
+
+</tr>
+<% end %>
+
+ </tbody>
