@@ -16,7 +16,7 @@
  *= require_self
  */
 .red {
-  background-color: #FF6140;
+  background-color: lightblue;
 }
 
 .splash {
@@ -29,4 +29,8 @@
   right:0;
   bottom:0;
   z-index:-2;
+}
+.welcome-center {
+  margin-top:25%;
+  opacity: 0.75;
 }
