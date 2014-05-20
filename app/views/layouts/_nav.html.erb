@@ -22,6 +22,12 @@
         <li><%= link_to "New Gangsta House", new_listing_path %></li>
         <li><%= link_to "New Gangster", new_user_path %></li>
       </ul>
+      <%= form_tag listings_path, class: "navbar-form navbar-left", :method => 'get' do %>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], class: "form-control" %>
+          <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+        </div>
+      <% end %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

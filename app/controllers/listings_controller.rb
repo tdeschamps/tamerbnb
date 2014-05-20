@@ -16,7 +16,7 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listing = Listing.all
+   @listings =  Listing.all.where("city like?", "%#{params[:search]}%")
   end
 
   def show
@@ -36,7 +36,7 @@ class ListingsController < ApplicationController
 
 
     def listing_params
-      @listing_params = params.require(:listing).permit(:id, :picture, :adress, :country, :city, :name, :nb_beds, :nb_bath, :price)
+      @listing_params = params.require(:listing).permit(:search, :id, :picture, :adress, :country, :city, :name, :nb_beds, :nb_bath, :price)
     end
 
 end

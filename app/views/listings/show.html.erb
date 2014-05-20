@@ -1,23 +1,25 @@
 <div class="container">
   <h1> Your gangsta house</h1>
   <h2><%= @listing.name %></h2>
-  <div>
-    <%= image_tag @listing.picture.url(:medium) %>
-    <div>
-      Adress: <%= @listing.adress %>
+  <div class="col-xs-6">
+    <%= image_tag @listing.picture.url %>
+    <hr>
+    <div class="jumbotron">
+      <div>
+        <strong>Adress: </strong><%= @listing.adress %>
+      </div>
+       <div>
+        <strong>City: </strong><%= @listing.city %>
+      </div>
+       <div>
+        <strong>Country </strong><%= @listing.country %>
+      </div>
+       <div>
+        <strong>Beds: </strong><%= @listing.nb_beds %>
+      </div>
+      <div>
+        <strong>Bath: </strong><%= @listing.nb_bath %>
+      </div>
     </div>
-     <div>
-      City: <%= @listing.city %>
-    </div>
-     <div>
-      Country <%= @listing.country %>
-    </div>
-     <div>
-      Beds: <%= @listing.nb_beds %>
-    </div>
-    <div>
-      Bath: <%= @listing.nb_bath %>
-    </div>
-  </div>
 
 </div>
