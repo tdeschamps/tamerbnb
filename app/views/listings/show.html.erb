@@ -2,7 +2,9 @@
   <h1> Your gangsta house</h1>
   <h2><%= @listing.name %></h2>
   <div class="col-xs-6">
-    <%= image_tag @listing.picture.url %>
+    <% @listing.pictures.each do |picture| %>
+      <%= image_tag picture.file.url(:medium) %>
+    <% end %>
     <hr>
     <div class="jumbotron">
       <div>

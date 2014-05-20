@@ -1,4 +1,4 @@
-L# encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@ L# encoding: UTF-8
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520083713) do
+ActiveRecord::Schema.define(version: 20140520173250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,21 +27,25 @@ ActiveRecord::Schema.define(version: 20140520083713) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
+  create_table "pictures", force: true do |t|
+    t.integer  "listing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
+  add_index "pictures", ["listing_id"], name: "index_pictures_on_listing_id", using: :btree
+
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email_address"
-    t.string   "user_name"
-    t.date     "birth_date"
-    t.text     "bio"
-    t.string   "password"
-    t.string   "profile_picture"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture_file_name"
@@ -49,6 +53,11 @@ ActiveRecord::Schema.define(version: 20140520083713) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "email",                  default: "", null: false
+    t.string   "first_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
+    t.string   "user_name",              default: "", null: false
+    t.datetime "birth_date"
+    t.text     "bio",                    default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

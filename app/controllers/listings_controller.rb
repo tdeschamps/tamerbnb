@@ -11,8 +11,9 @@ class ListingsController < ApplicationController
   end
 
   def create
-
     @listing = Listing.create(@listing_params)
+    @listing.pictures.create(picture_params)
+
     redirect_to listing_path(@listing)
   end
 
@@ -21,6 +22,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @listings =  Listing.all.where(params[:id])
   end
 
   def edit
@@ -35,6 +37,9 @@ class ListingsController < ApplicationController
       @listing = Listing.find(params[:id])
     end
 
+    def picture_params
+      params.require(:listing).permit(:file)
+    end
 
     def listing_params
       @listing_params = params.require(:listing).permit(:search, :id, :picture, :adress, :country, :city, :name, :nb_beds, :nb_bath, :price)
