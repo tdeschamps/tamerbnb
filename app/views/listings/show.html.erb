@@ -3,7 +3,7 @@
   <h2><%= @listing.name %></h2>
   <div class="col-xs-6">
     <% @listing.pictures.each do |picture| %>
-      <%= image_tag picture.file.url(:medium) %>
+      <%= image_tag picture.file.url(:medium), class: "thumbnail" %>
     <% end %>
     <hr>
     <div class="jumbotron">

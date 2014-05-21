@@ -3,35 +3,37 @@
 <div class="container">
   <h1> You betta like it, sucka</h1>
   <% @listings.each do |listing| %>
-  <div class="col-xs-4">
-    <% if listing.pictures.count > 0 %>
-      <% listing.pictures.each do |picture| %>
-        <%= image_tag picture.file.url(:medium) %>
+  <div class ="row">
+    <div class="col-xs-4">
+      <% if listing.pictures.count > 0 %>
+        <% listing.pictures.each do |picture| %>
+          <%= image_tag picture.file.url(:medium) %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'http://images.smh.com.au/2013/09/29/4788538/SG_729_Michael-620x349.jpg', class: "thumbnails small"  %>
       <% end %>
-    <% else %>
-      <%= image_tag 'http://images.smh.com.au/2013/09/29/4788538/SG_729_Michael-620x349.jpg', class: "thumbnails small"  %>
-    <% end %>
-    <hr>
-  </div>
-   <div class="col-xs-4 col-xs-offset-1">
-     <div class="jumbotron">
-        <h2><%= listing.name %></h2>
-       <div>
-         <strong>Adress: </strong><%= listing.adress %>
-       </div>
-        <div>
-         <strong>City: </strong><%= listing.city %>
-       </div>
-        <div>
-         <strong>Country </strong><%= listing.country %>
-       </div>
-        <div>
-         <strong>Beds: </strong><%= listing.nb_beds %>
-       </div>
-       <div>
-         <strong>Bath: </strong><%= listing.nb_bath %>
+      <hr>
+    </div>
+     <div class="col-xs-4 col-xs-offset-1">
+       <div class="jumbotron">
+          <h2><%= link_to listing.name, listing_path(listing) %></h2>
+         <div>
+           <strong>Adress: </strong><%= listing.adress %>
+         </div>
+          <div>
+           <strong>City: </strong><%= listing.city %>
+         </div>
+          <div>
+           <strong>Country </strong><%= listing.country %>
+         </div>
+          <div>
+           <strong>Beds: </strong><%= listing.nb_beds %>
+         </div>
+         <div>
+           <strong>Bath: </strong><%= listing.nb_bath %>
+         </div>
        </div>
      </div>
-   </div>
-    <% end %>
+    </div>
+  <% end %>
 </div>

@@ -3,8 +3,10 @@
     <h1 >Add your gangsta house</h1>
 
     <%= form_for @listing, :html => { :multipart => true }, :remote => true do |form| %>
-        <div class="form-group col-sm-10">
-           <%= render partial: 'pictures' %>
+        <div class="form-group col-sm-10"  id="pictures-container" >
+           <%= render partial: 'pictures'%>
+        </div>
+        <div class="form-group col-sm-10"  id="pictures-container" >
           <%= form.file_field :file, class: "upload" %>
         </div>
          <div class="form-group col-sm-10">
