@@ -3,6 +3,8 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :destroy]
   before_action :listing_params, only: [:create, :update]
 
+  respond_to :js, :html
+
   def welcome
   end
 
@@ -14,7 +16,10 @@ class ListingsController < ApplicationController
     @listing = Listing.create(@listing_params)
     @listing.pictures.create(picture_params)
 
-    redirect_to listing_path(@listing)
+    respond_with do |format|
+      format.js
+      format.html { redirect_to listing_path(@listing) }
+    end
   end
 
   def index
@@ -24,6 +29,19 @@ class ListingsController < ApplicationController
   def show
     @listings =  Listing.all.where(params[:id])
   end
+
+  def update
+    @listing = Listing.find(params[:id])
+
+    @listing.update!(listing_params)
+    @listing.pictures.create(picture_params)
+
+    respond_with do |format|
+      format.js
+      format.html { redirect_to flat_path(flat) }
+    end
+  end
+
 
   def edit
   end

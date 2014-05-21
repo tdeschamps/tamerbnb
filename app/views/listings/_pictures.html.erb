@@ -1,0 +1,6 @@
+<% @listing.pictures.each do |picture| %>
+  <fieldset>
+    <%= image_tag picture.file.url(:medium) %>
+    <%= link_to "Delete", picture_path(picture), class: 'delete-picture', method: :delete, remote: true %>
+  </fieldset>
+<% end %>
