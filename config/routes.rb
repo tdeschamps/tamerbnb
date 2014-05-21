@@ -1,30 +1,11 @@
 Rails.application.routes.draw do
-
-  resources :listings
-
-  #get 'listings/new'
-
-  #get 'listings/create'
-
-  #get 'listings/show'
-
-  #get 'listings/edit'
-
-  #get 'listings/destroy'
-
-  #get 'users/new'
-
-  #get 'users/create'
-
-  #get 'users/show'
-
-  #get 'users/edit'
-
-  #get 'users/destroy'
-
+  devise_for :users
+  root 'listings#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  resources :listings
+  resources :users
+  resources :pictires
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

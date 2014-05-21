@@ -15,3 +15,4 @@
 /log/*.log
 /tmp
 /db/schema_db.xml
+/config/database.yml

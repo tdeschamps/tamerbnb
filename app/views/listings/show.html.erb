@@ -1,2 +1,27 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<div class="container">
+  <h1> Your gangsta house</h1>
+  <h2><%= @listing.name %></h2>
+  <div class="col-xs-6">
+    <% @listing.pictures.each do |picture| %>
+      <%= image_tag picture.file.url(:medium) %>
+    <% end %>
+    <hr>
+    <div class="jumbotron">
+      <div>
+        <strong>Adress: </strong><%= @listing.adress %>
+      </div>
+       <div>
+        <strong>City: </strong><%= @listing.city %>
+      </div>
+       <div>
+        <strong>Country </strong><%= @listing.country %>
+      </div>
+       <div>
+        <strong>Beds: </strong><%= @listing.nb_beds %>
+      </div>
+      <div>
+        <strong>Bath: </strong><%= @listing.nb_bath %>
+      </div>
+    </div>
+
+</div>

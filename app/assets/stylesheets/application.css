@@ -10,6 +10,27 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require font-awesome
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
+.red {
+  background-color: lightblue;
+}
+
+.splash {
+  position: absolute;
+  background-image: url("http://wallemon.com/wp-content/uploads/2014/05/rick-ross-house-wallpaper.jpg");
+  width:100%;
+  height: auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:-2;
+}
+.welcome-center {
+  margin-top:25%;
+  opacity: 0.75;
+}
