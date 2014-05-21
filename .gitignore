@@ -16,3 +16,5 @@
 /tmp
 /db/schema_db.xml
 /config/database.yml
+# Ignore application configuration
+/config/application.yml
