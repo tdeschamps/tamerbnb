@@ -45,4 +45,13 @@ class ListingsController < ApplicationController
       @listing_params = params.require(:listing).permit(:search, :id, :picture, :adress, :country, :city, :name, :nb_beds, :nb_bath, :price)
     end
 
+     def set_user
+      @user = User.find(params[:id])
+    end
+
+    def set_params
+      @user_params = params.require(:user).permit(:first_name, :last_name,
+        :password, :user_name, :bio, :birth_date, :profile_picture, :picture, :email)
+    end
+
 end
