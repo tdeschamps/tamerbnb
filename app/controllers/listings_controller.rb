@@ -23,7 +23,7 @@ class ListingsController < ApplicationController
   end
 
   def index
-   @listings =  Listing.all.where("city like?", "%#{params[:search]}%")
+    @listings =  Listing.all.where("city like?", "%#{params[:search]}%")
   end
 
   def show
