@@ -2,6 +2,13 @@
   <div class="container">
     <div class="jumbotron welcome-center">
       <h1>Get on board Gangsta</h1>
+      <h2>We got the baddest cribs around the world</h2>
+      <%= form_tag listings_path, class: "navbar-form navbar-left", :method => 'get' do %>
+        <div class="form-group col-xs-12">
+          <%= text_field_tag :search, params[:search], class: "form-control" %>
+          <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
   </div>
 

@@ -1,17 +1,24 @@
 <div class="container">
-  <h1> Your gangsta house</h1>
+  <h1> That crib's cray</h1>
   <h2><%= @listing.name %></h2>
   <div class="col-xs-6">
-    <% @listing.pictures.each do |picture| %>
-      <%= image_tag picture.file.url(:medium), class: "thumbnail" %>
-    <% end %>
-    <hr>
+    <% if @listing.pictures.count > 0 %>
+        <% @listing.pictures.each do |picture| %>
+          <%= image_tag picture.file.url(:medium) %>
+        <% end %>
+      <% else %>
+        <%= image_tag 'http://images.smh.com.au/2013/09/29/4788538/SG_729_Michael-620x349.jpg', class: "thumbnails small"  %>
+      <% end %>
+      <hr>
     <div class="jumbotron">
       <div>
         <strong>Adress: </strong><%= @listing.adress %>
       </div>
        <div>
         <strong>City: </strong><%= @listing.city %>
+      </div>
+      <div>
+        <strong>G Story :</strong><%=@listing.description %>
       </div>
        <div>
         <strong>Country </strong><%= @listing.country %>
