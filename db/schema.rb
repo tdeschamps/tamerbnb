@@ -27,11 +27,14 @@ ActiveRecord::Schema.define(version: 20140522074147) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+<<<<<<< HEAD
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.text     "description",       default: "Expanded dynamic local area network"
+=======
+>>>>>>> ec998d5fa1da32ab6036a5eb28885a9770bf2e45
   end
 
   create_table "pictures", force: true do |t|
