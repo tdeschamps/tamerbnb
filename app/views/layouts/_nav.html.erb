@@ -23,7 +23,7 @@
         <% if !signed_in? %>
           <li><%= link_to "New Gangster", new_user_registration_path %></li>
         <% elsif signed_in? && current_user.listings.all.count > 0%>
-          <li><% link_to "Your gangsta", listing_path(current_user.listing) %>
+          <li><% link_to "Your gangsta", listing_path(current_user.listings) %>
         <%end %>
       </ul>
       <%= form_tag listings_path, class: "navbar-form navbar-left", :method => 'get' do %>

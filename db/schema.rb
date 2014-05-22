@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522074147) do
+ActiveRecord::Schema.define(version: 20140522162048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: true do |t|
+    t.integer  "listing_id_id"
+    t.integer  "user_id_id"
+    t.date     "begin_date"
+    t.date     "end_date"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookings", ["listing_id_id"], name: "index_bookings_on_listing_id_id", using: :btree
+  add_index "bookings", ["user_id_id"], name: "index_bookings_on_user_id_id", using: :btree
 
   create_table "listings", force: true do |t|
     t.string   "adress"
@@ -27,14 +40,11 @@ ActiveRecord::Schema.define(version: 20140522074147) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-<<<<<<< HEAD
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.text     "description",       default: "Expanded dynamic local area network"
-=======
->>>>>>> ec998d5fa1da32ab6036a5eb28885a9770bf2e45
   end
 
   create_table "pictures", force: true do |t|

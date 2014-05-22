@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing_id_id: 
+  user_id_id: 
+  begin_date: 2014-05-22
+  end_date: 2014-05-22
+  price: 1
+
+two:
+  listing_id_id: 
+  user_id_id: 
+  begin_date: 2014-05-22
+  end_date: 2014-05-22
+  price: 1

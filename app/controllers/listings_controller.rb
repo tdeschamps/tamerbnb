@@ -13,13 +13,13 @@ class ListingsController < ApplicationController
   end
 
   def create
-      @listing = current_user.Listing.create(@listing_params)
+      @listing = Listing.create(@listing_params)
       @listing.pictures.create(picture_params)
 
       respond_with do |format|
         format.js
-      format.html { redirect_to listing_path(@listing) }
-    end
+        format.html { redirect_to listing_path(@listing) }
+      end
   end
 
   def index
@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    authorize(current_user, @listing)
+    authorize @listing
 
     @listing.update!(listing_params)
     @listing.pictures.create(picture_params)
@@ -64,10 +64,6 @@ class ListingsController < ApplicationController
     end
 
     def listing_params
-      @listing_params = params.require(:listing).permit(:description, :search, :id, :adress, :country, :city, :name, :nb_beds, :nb_bath, :price)
-    end
-
-     def set_user
-      @user = User.find(params[:id])
+      @listing_params = params.require(:listing).permit(:user_id, :description, :search, :id, :adress, :country, :city, :name, :nb_beds, :nb_bath, :price)
     end
 end

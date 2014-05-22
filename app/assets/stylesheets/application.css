@@ -17,7 +17,7 @@
   *= font-family: 'Bangers', cursive;
  */
 .red {
-  background-color: lightblue;
+  background-color: rgba(200,200,200,0.95);
 }
 
 .splash {
