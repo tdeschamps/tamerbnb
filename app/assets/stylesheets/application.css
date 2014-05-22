@@ -14,6 +14,7 @@
  *= require bootstrap
  *= require_tree .
  *= require_self
+  *= font-family: 'Bangers', cursive;
  */
 .red {
   background-color: lightblue;
@@ -37,4 +38,12 @@
 .small {
   width:100%;
   height:auto;
+}
+
+.navbar-brand {
+font-family:'Bangers', cursive;
+}
+
+.navbar-nav {
+font-family: 'Roboto', sans-serif;
 }
