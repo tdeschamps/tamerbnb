@@ -12,10 +12,9 @@
       <% else %>
         <%= image_tag 'http://images.smh.com.au/2013/09/29/4788538/SG_729_Michael-620x349.jpg', class: "thumbnails small"  %>
       <% end %>
-      <hr>
     </div>
      <div class="col-xs-4 col-xs-offset-1">
-       <div class="jumbotron">
+       <div >
           <h2><%= link_to listing.name, listing_path(listing) %></h2>
          <div>
            <strong>Adress: </strong><%= listing.adress %>
@@ -35,8 +34,12 @@
          <div>
            <strong>Bath: </strong><%= listing.nb_bath %>
          </div>
+         <div>
+          <strong>Price: $</strong><%= listing.price %>
+        </div>
        </div>
      </div>
     </div>
+  <hr>
   <% end %>
 </div>

@@ -14,11 +14,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @listing.update!(@user)
     @user.update!(@user_params)
     redirect_to user_path(@user)
   end
 
   def destroy
+    @listing.update!(listing_params)
     @user.destroy
     redirect_to root_path
   end

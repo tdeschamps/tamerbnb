@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.find(params[:id])
+    authorize(@listing)
 
     @listing.update!(listing_params)
     @listing.pictures.create(picture_params)
@@ -47,6 +47,10 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    authorize(@listing)
+    @listing.destroy
+
+    redirect_to root_path
   end
 
   private
