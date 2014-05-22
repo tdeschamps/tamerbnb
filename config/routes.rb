@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :listings, only: [:new, :create, :update, :show, :index, :delete]
+  resources :listings, only: [:new, :create, :edit, :show, :index, :delete]
   resources :users, only: [:new, :create, :show, :update, :delete]
   resources :pictures
   # You can have the root of your site routed with "root"

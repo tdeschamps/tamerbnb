@@ -1,4 +1,4 @@
-class PostPolicy
+class ListingPolicy
   attr_reader :user, :listing
 
   def initialize(user, listing)

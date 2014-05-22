@@ -13,11 +13,11 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(@listing_params)
-    @listing.pictures.create(picture_params)
+      @listing = current_user.Listing.create(@listing_params)
+      @listing.pictures.create(picture_params)
 
-    respond_with do |format|
-      format.js
+      respond_with do |format|
+        format.js
       format.html { redirect_to listing_path(@listing) }
     end
   end
@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    authorize(@listing)
+    authorize(current_user, @listing)
 
     @listing.update!(listing_params)
     @listing.pictures.create(picture_params)
@@ -47,7 +47,7 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    authorize(@listing)
+    authorize(current_user, @listing)
     @listing.destroy
 
     redirect_to root_path
