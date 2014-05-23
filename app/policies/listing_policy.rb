@@ -8,6 +8,7 @@ class ListingPolicy
 
   def owned
     @listing.user_id == user.id
+  end
   def update?
     owned
   end
@@ -27,4 +28,5 @@ class ListingPolicy
   def new?
     true
   end
+
 end
