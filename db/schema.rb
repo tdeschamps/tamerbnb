@@ -40,11 +40,15 @@ ActiveRecord::Schema.define(version: 20140522162048) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+<<<<<<< HEAD
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.text     "description",       default: "Ergonomic demand-driven algorithm"
+=======
+    t.text     "description", default: "Business-focused multi-state orchestration"
+>>>>>>> 44c8f17d9650a1e0f32ae1f881d9d89030f5ce87
   end
 
   create_table "pictures", force: true do |t|
