@@ -33,14 +33,14 @@
         <strong>Price: $</strong><%= @listing.price %>
       </div>
     </div>
-    <% if current_user.id = @listing.user_id %>
+    <% if current_user.id == @listing.user_id %>
       <div class = 'form-group'>
           <%= button_to "Edit", edit_listing_path(@listing), class: "btn btn-primary", :method => :get %>
       </div>
     <% else %>
-          <div class = 'form-group'>
-          <% render partial: 'booking', {listing_id: @listing.id} %>
-      </div>
+        <div class = 'form-group'>
+          <%= render partial: 'booking', object: @listing %>
+        </div>
     <% end %>
 
 </div>

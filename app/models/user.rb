@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :listings
+  has_many :bookings
 
   has_attached_file :picture,
 
@@ -14,4 +15,5 @@ class User < ActiveRecord::Base
     validates_attachment_content_type :picture,
 
     :content_type => /\Aimage\/.*\Z/
+
 end

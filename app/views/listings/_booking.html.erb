@@ -1,11 +1,11 @@
 <div class="form-container">
-  <div class='col-xs-4 col-xs-offset-2'>
-      <h1 >Add your gangsta house</h1>
+  <div>
+      <h2>Book that s#$% B%$@</h2>
 
-        <%= form_for @current_user.bookings.build, :html => { :multipart => true }, :remote => true do |form| %>
-          <% form.hidden_field :listing_id %>
-          <% form.hidden_field :price, value: @listing.price %>
-          <% form.hidden_field :user_id %>
+        <%= form_for current_user.bookings.build do |form| %>
+          <%= form.hidden_field :listing_id, value:@listing.id %>
+          <%= form.hidden_field :price, value:@listing.price %>
+          <%= form.hidden_field :user_id %>
           <div class="form-group col-sm-10">
             <%= form.label :begin_date %>
             <%= form.date_field :begin_date, class: "form-control"%>
@@ -17,5 +17,6 @@
         <div class="form-group col-sm-10">
             <%= form.submit class: "btn btn-primary" %>
         </div>
+      <% end %>
   </div>
 </div>

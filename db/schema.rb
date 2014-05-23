@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20140522162048) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: true do |t|
-    t.integer  "listing_id_id"
-    t.integer  "user_id_id"
+    t.integer  "listing_id"
+    t.integer  "user_id"
     t.date     "begin_date"
     t.date     "end_date"
     t.integer  "price"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20140522162048) do
     t.datetime "updated_at"
   end
 
-  add_index "bookings", ["listing_id_id"], name: "index_bookings_on_listing_id_id", using: :btree
-  add_index "bookings", ["user_id_id"], name: "index_bookings_on_user_id_id", using: :btree
+  add_index "bookings", ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "listings", force: true do |t|
     t.string   "adress"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140522162048) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
-    t.text     "description",       default: "Expanded dynamic local area network"
+    t.text     "description",       default: "Ergonomic demand-driven algorithm"
   end
 
   create_table "pictures", force: true do |t|

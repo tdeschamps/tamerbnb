@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Thanks for booking <%=@booking.listing.name %></h1>
+  <div>
+
+    Your booking will start on <%= @booking.begin_date.to_formatted_s(:rfc822)  %> and finish <%= @booking.end_date.to_formatted_s(:rfc822)  %>
+    The price is: <%= @booking.total_price %>
+  </div>
+  <div>
+    <%= image_tag "http://miamivice.su/gallery/pictures/common/77098-6.jpg", class: "thumbnail" %>
+  <div>
+</div>

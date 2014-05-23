@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :listings, only: [:new, :create, :edit, :show, :index, :delete]
   resources :users, only: [:new, :create, :show, :delete]
   resources :pictures
+  resources :bookings
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

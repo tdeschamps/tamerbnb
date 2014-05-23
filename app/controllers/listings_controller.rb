@@ -27,7 +27,6 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listings =  Listing.all.where(params[:id])
   end
 
   def update
