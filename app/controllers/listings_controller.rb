@@ -24,6 +24,17 @@ class ListingsController < ApplicationController
 
   def index
     @listings =  Listing.all.where("city like?", "%#{params[:search]}%")
+
+    @hash = Gmaps4rails.build_markers(@listings) do |listing, marker|
+      marker.lat listing.latitude
+      marker.lng listing.longitude
+      marker.json({ title: listing.name })
+#      marker.picture({
+#             "url" => ,
+#             "width" =>  32,
+#             "height" => 32})
+      marker.infowindow render_to_string(:partial => "/listings/map_box", locals: {listing: listing})
+    end
   end
 
   def show

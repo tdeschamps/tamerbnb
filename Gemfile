@@ -37,6 +37,8 @@ gem 'binding_of_caller'
 gem 'quiet_assets'
 gem 'faker'
 gem 'pundit'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
